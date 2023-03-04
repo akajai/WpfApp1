@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Button x:Key="MyButton" Content="Click me" Width="100" Height="25"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+    <TextBox x:Key="MyTextBox" Text="test" Width="200" Height="20" IsReadOnly="False" TextWrapping="NoWrap" Visibility="Visible" IsEnabled="True" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+    <TextBlock x:Key="MyTextBlock" Text=" " Foreground="AliceBlue" FontSize="12" Margin="23" Width="20 " TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Visible" FontFamily="12" FontStyle="Normal" FontWeight="Black" Background="AntiqueWhite" Padding="12" TextTrimming="None" MaxHeight="12" AllowDrop="True" ToolTip="ytr"/>
+    <ComboBox x:Key="MyComboBox" AllowDrop="False"  Background="AliceBlue"  BorderBrush="AliceBlue" DisplayMemberPath="" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+    <CheckBox x:Key="MyCheckBox" IsChecked="True" IsEnabled="True" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="200" Width="20"/>
+</ResourceDictionary>
