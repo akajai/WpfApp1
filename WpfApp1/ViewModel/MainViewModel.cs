@@ -32,7 +32,7 @@ namespace WpfApp1.ViewModel
             controls= new ObservableCollection<Type>(controls.Where(c => mycontrols.ToList().Any(myc => myc.Key == c.Name)));
         }
         Dictionary<string, string> mycontrols = new Dictionary<string, string>() { { "Button", "MyButton" }, { "TextBox", "MyTextBox" }, { "TextBlock", "MyTextBlock" },{ "ComboBox", "MyComboBox" }, {"CheckBox","MyCheckBox" }};
-        private const string V = "Button Text";
+        private const string V = "Display XAMLs";
         [ObservableProperty]
         private ObservableCollection<string>? items= new ObservableCollection<string>();
         [ObservableProperty]
