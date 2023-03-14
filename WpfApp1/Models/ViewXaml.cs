@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1
+namespace WpfApp1.Models
 {
-    public class MyControlDropTarget//: DropTargetBase
+    public class ViewXaml
     {
+        public int Id { get; set; }
+        public string Controls { get; set; }
     }
 }

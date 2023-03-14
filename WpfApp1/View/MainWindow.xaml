@@ -36,7 +36,7 @@
                     </ie:Interaction.Triggers>
 
                 </ListBox>
-                <Button Content="{Binding Button1}" Width="100" Background="Blue" Height="30" Command="{Binding AddCommand}" Grid.Column="0" Grid.Row="1"/>
+                <Button Content="{Binding Button1}" Width="100" Background="AliceBlue" Height="30" Command="{Binding AddCommand}" Grid.Column="0" Grid.Row="1"/>
             </Grid>
         </DockPanel>
         <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" >

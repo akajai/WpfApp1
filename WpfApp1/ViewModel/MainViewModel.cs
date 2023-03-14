@@ -1,27 +1,32 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Markup;
-using System.Xml.Linq;
 using System.Xml;
+using WpfApp1.DBContext;
 using WpfApp1.Helper;
+using WpfApp1.Services;
 using static WpfApp1.Helper.Library;
 
 namespace WpfApp1.ViewModel
 {
     public partial class MainViewModel : ObservableObject
     {
+        private readonly IDbContext _dbContext;
+
+        private readonly ControlServices _controlServices;
         public MainViewModel()
         {
+            // _controlServices = controlServices;
             controls = new ObservableCollection<Type>(Library.GetWpfControlsList());
             assembly = new ObservableCollection<Namespace>(Library.GetLibrary());
             controls= new ObservableCollection<Type>(controls.Where(c => mycontrols.ToList().Any(myc => myc.Key == c.Name)));
@@ -76,6 +81,8 @@ namespace WpfApp1.ViewModel
             }
             string gridxaml = stringBuilder.ToString();
             myRichTextBox.Document.Blocks.Add(new Paragraph(new Run(gridxaml)));
+            //_dbContext.ViewXamls.Add(new Models.ViewXaml() {Controls=gridxaml });
+
             OnPropertyChanged("xmls");
             OnPropertyChanged("controls");
             OnPropertyChanged("label1");
@@ -95,7 +102,6 @@ namespace WpfApp1.ViewModel
             FrameworkElement rootElement = (FrameworkElement)Application.Current.MainWindow.Content;
             Grid grid = (Grid)rootElement.FindName("myGrid2");
             UIElement element = (UIElement)XamlReader.Parse(xaml);
-            
             // Add the object to the Grid's Children collection
             grid.Children.Clear();
             grid.Children.Add(element);
